@@ -5,6 +5,7 @@ let ThirdDependency = core.ThirdDependency;
 
 let ThirdParty = {
   tsmd5: new ThirdDependency("ts-md5", "1.2.4"),
+  axios: new ThirdDependency("axios", "0.19.0"),
 };
 
 let LocalParty = {
