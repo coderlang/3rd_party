@@ -16,8 +16,7 @@
     "lib":["dom", "ScriptHost"]
   },
   "include": [
-    "../../pages",
-    "../../miniprogram_npm",
+    "../../src",
     "../../*.ts"
   ],
   "exclude": [

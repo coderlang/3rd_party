@@ -106,16 +106,12 @@ class PackageJsConverter {
     }
     // initpro 命令是每一个项目必须实现的命名，命令的实际执行内容无规定，但一般都是初始化为pro的服务器
     scripts = [
-      new Script("preinstall", "node ./3rd_party/script/cmd/preinstall.js")
-      , new Script("checksign", "node ./3rd_party/script/cmd/checksign.js || "
+      new Script("checksign", "node ./3rd_party/script/cmd/checksign.js || "
         + " npm install && node ./3rd_party/script/cmd/checksign.js ")
-      , new Script("checksvn", "node ./3rd_party/script/cmd/checksvn.js")
       , new Script("init", "node ./3rd_party/script/cmd/init.js")
       , new Script("push", "node ./3rd_party/script/cmd/push.js"
-        , "npm run checksvn && npm run build")
+        , "npm run build")
       , new Script("build" , "tsc", "npm run checksign")
-      , new Script("wxappupload", "npm run initpro && npm run checksvn && npm run build")
-      , new Script("initpro", "./init.sh pro")
     ].concat(scripts);
 
     let scripts2 = {};
