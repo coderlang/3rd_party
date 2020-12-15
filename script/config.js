@@ -9,20 +9,10 @@ let ThirdParty = {
 
 let LocalParty = {
   Utils: {
-    Trunk: new LocalDependency("utils", core.TrunkVersion),
-  },
-  WxWrapper:{
-    V0_1: new LocalDependency("wxwrapper", "0.1.0"),
-  },
-  Stream: {
-    Trunk: new LocalDependency("stream", core.TrunkVersion),
-    V0_1: new LocalDependency("stream", "0.1.0"),
+    Master: new LocalDependency("utils", "git+https://github.com/coderlang/utils.git"),
   },
   Foundation: {
-    Trunk: new LocalDependency("foundation", core.TrunkVersion)
-  },
-  ThirdService: {
-    Trunk: new LocalDependency("thirdservice", core.TrunkVersion)
+    Master: new LocalDependency("foundation", "git+https://github.com/coderlang/Proj1.git")
   }
 };
 
