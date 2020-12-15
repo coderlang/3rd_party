@@ -46,17 +46,12 @@ class ThirdDependency extends Dependency {
 }
 
 class LocalDependency extends Dependency {
-  constructor(name, versionNumber) {
-    super(name, RepoUrl
-      + "/" + name + "/" + versionNumber);
+  constructor(name, repo) {
+    super(name, repo);
   }
 
   getVersion(env) {
-    if (env === Env.push) {
-      return "file:../../../../" + this.version;
-    }
-
-    return "file:" + this.version;
+    return this.version;
   }
 }
 
