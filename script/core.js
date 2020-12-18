@@ -108,9 +108,10 @@ class PackageJsConverter {
     scripts = [
       new Script("checksign", "node ./3rd_party/script/cmd/checksign.js || "
         + " npm install && node ./3rd_party/script/cmd/checksign.js ")
+      , new Script("checkgit", "node ./3rd_party/script/cmd/checkgit.js")
       , new Script("init", "node ./3rd_party/script/cmd/init.js")
       , new Script("push", "node ./3rd_party/script/cmd/push.js"
-        , "npm run build")
+        , "npm run checkgit && npm run build")
       , new Script("build" , "tsc", "npm run checksign")
     ].concat(scripts);
 
