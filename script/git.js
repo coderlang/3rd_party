@@ -14,6 +14,15 @@ let checkVersion = () => {
   }
 };
 
+let checkHEADDetached = () => {
+  let flag = "HEAD detached at";
+  let result = exec("git status");
+  if(result.indexOf(flag)>=0) {
+    throw new Error(`3rd_party分支指向异常 ${result}，请处理`);
+  }
+};
+
 module.exports = {
-  checkVersion:checkVersion
+  checkVersion:checkVersion,
+  checkHEADDetached:checkHEADDetached,
 };
