@@ -1,2 +1,2 @@
 # 3rd_party
-# 本次修改用于测试submodule是否能接收到更新
+# 更新3rd_party测试submodule更新机制
