@@ -1,7 +1,5 @@
 let pwd = process.cwd();
 let fs = require("fs");
-let core = require(`${pwd}/3rd_party/script/core.js`);
-let Repo = core.RepoUrl;
 
 function findTsConfig(filename, keys) {
   if (keys == null || keys.length === 0) {
@@ -37,32 +35,14 @@ function checkTsConfig() {
   }
 }
 
+let exec = (cmd) => {
+  return require('child_process').execSync(cmd).toString().trim()
+};
+
 class Package {
   static run() {
-    let PushRepositoryUrl = `${Repo}/${name}/${version}`;
-    rmdir(PushRepositoryUrl);
-    mkdir(PushRepositoryUrl);
-    //dist和tsconfig配置相关
-    files.forEach((file) => {
-      if (file === "index.ts") {
-        file = "index.js";
-      }
-      copy(`dist/${file}`, `${PushRepositoryUrl}/${file}`);
-    });
-
-    let json = require(pwd + "/" + core.PackageInfile);
-    let jsonobj = new Converter(core.Env.push);
-    jsonobj.Convert(json);
-    /**
-     * 整理发布的package.json，去掉preinstall
-     */
-    delete json.scripts["preinstall"];
-    delete json.private;
-    json.files = json.files.filter((value => value!=="index.ts"));
-    json.files.push("index.js");
-
-    fs.writeFileSync(PushRepositoryUrl + '/' + core.PackageOutfile, JSON.stringify(json, null, '\t'));
-    copy("./package-lock.json", `${PushRepositoryUrl}/package-lock.json`);
+    let commitId = exec("git rev-parse HEAD");
+    console.log(`commitId ${commitId}`);
   }
 }
 

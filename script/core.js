@@ -8,7 +8,6 @@ const Package = {
 };
 
 const RepoUrl = "3rd_party/repo";
-const JsRepoUrl = "3rd_party/js-repo";
 const TrunkVersion = "0.996.0";
 const PackageOutfile = "package.json";
 const PackageInfile = "package.js";
@@ -135,7 +134,6 @@ module.exports = {
   LocalDependency: LocalDependency,
   ThirdDependency: ThirdDependency,
   RepoUrl: RepoUrl,
-  JsRepoUrl: JsRepoUrl,
   TrunkVersion: TrunkVersion,
   PackageInfile: PackageInfile,
   PackageOutfile: PackageOutfile,
