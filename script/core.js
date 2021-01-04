@@ -8,6 +8,7 @@ const Package = {
 };
 
 const RepoUrl = "3rd_party/repo";
+const JsRepoUrl = "3rd_party/js-repo";
 const TrunkVersion = "0.996.0";
 const PackageOutfile = "package.json";
 const PackageInfile = "package.js";
@@ -112,6 +113,8 @@ class PackageJsConverter {
       , new Script("init", "node ./3rd_party/script/cmd/init.js")
       , new Script("push", "node ./3rd_party/script/cmd/push.js"
         , "npm run checkgit && npm run build")
+      , new Script("pushjs", "node ./3rd_party/script/cmd/pushjs.js"
+        , "npm run checkgit && npm run build")
       , new Script("build" , "tsc", "npm run checksign")
     ].concat(scripts);
 
@@ -132,6 +135,7 @@ module.exports = {
   LocalDependency: LocalDependency,
   ThirdDependency: ThirdDependency,
   RepoUrl: RepoUrl,
+  JsRepoUrl: JsRepoUrl,
   TrunkVersion: TrunkVersion,
   PackageInfile: PackageInfile,
   PackageOutfile: PackageOutfile,
