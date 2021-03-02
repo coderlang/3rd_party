@@ -10,13 +10,13 @@ let ThirdParty = {
 
 let LocalParty = {
   Utils: {
-    Master: new LocalDependency("utils", "git+https://github.com/coderlang/utils.git#b3f01ddc84132201abcc21a62d6cb0dead346283"),
+    Master: new LocalDependency("utils", "git+https://github.com/coderlang/utils.git#master"),
   },
   Foundation: {
-    Master: new LocalDependency("foundation", "git+https://github.com/coderlang/foundation.git#60d1086bb3ac9fc6a2c74225a5b7ffad97758d2b")
+    Master: new LocalDependency("foundation", "git+https://github.com/coderlang/foundation.git#master")
   },
   WebWrapper: {
-    Master: new LocalDependency("webwrapper", "git+https://github.com/coderlang/webwrapper.git#ecb44998d1fafdaf313cd3f33b077849e40aa5ff")
+    Master: new LocalDependency("webwrapper", "git+https://github.com/coderlang/webwrapper.git#master")
   }
 };
 
