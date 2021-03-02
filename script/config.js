@@ -16,7 +16,7 @@ let LocalParty = {
     Master: new LocalDependency("foundation", "git+https://github.com/coderlang/foundation.git#60d1086bb3ac9fc6a2c74225a5b7ffad97758d2b")
   },
   WebWrapper: {
-    Master: new LocalDependency("webwrapper", "git+https://github.com/coderlang/webwrapper.git#433578822abd1114f1c8fdad140de3731cd9a16c")
+    Master: new LocalDependency("webwrapper", "git+https://github.com/coderlang/webwrapper.git#ecb44998d1fafdaf313cd3f33b077849e40aa5ff")
   }
 };
 
