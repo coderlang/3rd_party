@@ -10,7 +10,7 @@ let ThirdParty = {
 
 let LocalParty = {
   Utils: {
-    Master: new LocalDependency("utils", "git+https://github.com/coderlang/utils.git#a52669ef798d54fe900b1458e7cd33f10fc9a3e0"),
+    Master: new LocalDependency("utils", "git+https://github.com/coderlang/utils.git#b3f01ddc84132201abcc21a62d6cb0dead346283"),
   },
   Foundation: {
     Master: new LocalDependency("foundation", "git+https://github.com/coderlang/foundation.git#60d1086bb3ac9fc6a2c74225a5b7ffad97758d2b")
